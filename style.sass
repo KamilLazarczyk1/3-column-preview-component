@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap')
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap')
+    
+$brightOrange: hsl(31, 77%, 52%)
+$darkCyan: hsl(184, 100%, 22%)
+$veryDarkCyan: hsl(179, 100%, 13%)
+$transparentWhite: hsla(0, 0%, 100%, 0.75) //(paragraphs)
+$transparentColor: hsla(0, 0%, 0%, 0)
+$veryLightGray: hsl(0, 0%, 95%)  //(background, headings, buttons)
+$fontSize: 15px  
+$fontFamilyBig: 'Big Shoulders Display', cursive
+$fontFamilySmall: 'Lexend Deca', sans-serif
+
+*
+    box-sizing: border-box
+body
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 15px
+    min-height: 100vh
+    background-color: $veryLightGray
+    main
+        display: grid
+        border-radius: 10px
+        overflow: hidden
+        section
+            position: relative
+            padding: 60px 60px 110px 60px
+            h3
+                font-family: $fontFamilyBig
+                font-size: 40px
+                text-transform: uppercase
+                color: $veryLightGray
+            p
+                line-height: 26px
+                font-size: 15px
+                color: $transparentWhite
+            button
+                position: absolute
+                bottom: 50px
+                background-color: $veryLightGray
+                border: 2px solid $veryLightGray
+                width: 140px
+                height: 50px
+                border-radius: 50px
+                cursor: pointer
+                transition-duration: 0.2s
+            p, button
+                font-family: $fontFamilySmall
+            button:hover
+                background-color: $transparentColor
+                color: $veryLightGray !important
+        section.sectionSedans
+            background-color: $brightOrange
+            button
+                color: $brightOrange
+        section.sectionSuvs
+            background-color: $darkCyan
+            button
+                color: $darkCyan
+        section.sectionLuxury
+            background-color: $veryDarkCyan
+            button
+                color: $veryDarkCyan
+    @media screen and (min-width: 600px)
+        main
+            grid-template-columns: auto auto
+            section.sectionLuxury
+                grid-column: 1 / 3
+    @media screen and (min-width: 900px)
+        main
+            grid-template-columns: auto auto auto
+            section
+                max-width: 300px
+                height: 550px
+            section.sectionLuxury
+                grid-column: auto
+
+    .attribution 
+        position: fixed
+        bottom: 0
+        font-size: 11px 
+        text-align: center
+        a 
+            color: hsl(228, 45%, 44%)
